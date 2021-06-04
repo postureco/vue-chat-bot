@@ -14,7 +14,6 @@
       )
         span {{ item.text }}
       a.qkb-mb-button-options__btn.qkb-mb-button-options__url(
-        target="_blank",
         v-else,
         :href="item.value"
       )
