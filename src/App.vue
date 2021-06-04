@@ -34,9 +34,9 @@ export default {
         botAvatarImg: BotIcon,
         boardContentBg: '#f4f4f4',
         msgBubbleBgBot: '#fff',
-        inputPlaceholder: 'Type hereeee...',
+        inputPlaceholder: 'Reply here...',
         inputDisableBg: '#fff',
-        inputDisablePlaceholder: 'Hit the buttons above to respond'
+        inputDisablePlaceholder: 'Tap a button above to respond'
       }
     }
   },
