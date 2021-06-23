@@ -5,7 +5,7 @@
   .qkb-board-action__wrapper
     .qkb-board-action__msg-box
       input.qkb-board-action__input(
-        type="text",
+        :type="inputType",
         v-model="messageText",
         ref="qkbMessageInput",
         :disabled="inputDisable",
@@ -42,6 +42,11 @@ export default {
     inputDisable: {
       type: Boolean,
       default: false
+    },
+
+    inputPassword: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -60,12 +65,16 @@ export default {
       }
 
       if (this.messageText) {
-        actionClasses.push('qkb-board-aciton--typing')
+        actionClasses.push('qkb-board-action--typing')
       }
 
       // TODO: sending
 
       return actionClasses
+    },
+
+    inputType () {
+      return (this.inputPassword ? 'password' : 'text')
     }
   },
 

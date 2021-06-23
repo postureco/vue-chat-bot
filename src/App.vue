@@ -9,6 +9,7 @@
     :messages="messageData",
     :bot-typing="botTyping",
     :input-disable="inputDisable",
+    :input-password="inputPassword"
     :is-open="false",
     @init="botStart",
     @msg-send="msgSend",
@@ -30,6 +31,7 @@ export default {
       messageData: [],
       botTyping: false,
       inputDisable: false,
+      inputPassword: false,
       botOptions: {
         botAvatarImg: BotIcon,
         boardContentBg: '#f4f4f4',
@@ -84,8 +86,9 @@ export default {
             agent: 'bot',
             ...response
           }
-
+          console.log('response', response)
           this.inputDisable = response.disableInput
+          this.inputPassword = response.password
           this.messageData.push(replyMessage)
 
           // finish

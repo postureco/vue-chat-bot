@@ -13,6 +13,7 @@
         :main-data="messages"
       )
       BoardAction(
+        :input-password="inputPassword"
         :input-disable="inputDisable",
         :input-placeholder="optionsMain.inputPlaceholder",
         :input-disable-placeholder="optionsMain.inputDisablePlaceholder",
@@ -73,6 +74,11 @@ export default {
     },
 
     inputDisable: {
+      type: Boolean,
+      default: false
+    },
+
+    inputPassword: {
       type: Boolean,
       default: false
     },
