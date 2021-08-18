@@ -80,6 +80,11 @@ export default {
     isOpen: {
       type: Boolean,
       default: false
+    },
+
+    topRight: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -117,6 +122,9 @@ export default {
 
       if (this.optionsMain.animation) {
         classes.push('qkb-bot-ui--animate')
+      }
+      if (this.optionsMain.topRight) {
+        classes.push('top-right')
       }
 
       return classes
