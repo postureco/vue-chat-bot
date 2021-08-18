@@ -38,6 +38,10 @@ export default {
 .qkb-board {
   bottom: ${bubbleBtnSize}px;
 }
+.top-right .qkb-board {
+  top: ${bubbleBtnSize + 20}px;
+  bottom: initial;
+}
 .qkb-board-header {
   background-color: ${colorScheme};
 }

@@ -38,7 +38,8 @@ export default {
         msgBubbleBgBot: '#fff',
         inputPlaceholder: 'Reply here...',
         inputDisableBg: '#fff',
-        inputDisablePlaceholder: 'Tap a button above to respond'
+        inputDisablePlaceholder: 'Tap a button above to respond',
+        topRight: true
       }
     }
   },
@@ -86,7 +87,6 @@ export default {
             agent: 'bot',
             ...response
           }
-          console.log('response', response)
           this.inputDisable = response.disableInput
           this.inputPassword = response.password
           this.messageData.push(replyMessage)
