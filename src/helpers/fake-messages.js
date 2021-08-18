@@ -23,6 +23,12 @@ export const fakeMessages = [
   },
   {
     'type': 'text',
+    'text': 'Try entering a password.',
+    'disableInput': false,
+    'password': true
+  },
+  {
+    'type': 'text',
     'text': 'Please type your problem',
     'disableInput': false
   },
