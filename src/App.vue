@@ -89,8 +89,8 @@ export default {
           }
           this.inputDisable = response.disableInput
           this.inputPassword = response.password
-          // this.messageData.push(replyMessage)
-          this.messageData = [replyMessage]
+          this.messageData.push(replyMessage)
+          // this.messageData = [replyMessage]
 
           // finish
           this.botTyping = false
