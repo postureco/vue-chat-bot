@@ -10,7 +10,7 @@
     :bot-typing="botTyping",
     :input-disable="inputDisable",
     :input-password="inputPassword"
-    :is-open="false",
+    :is-open="true",
     @init="botStart",
     @msg-send="msgSend",
   )
@@ -34,7 +34,7 @@ export default {
       inputPassword: false,
       botOptions: {
         botAvatarImg: BotIcon,
-        boardContentBg: '#f4f4f4',
+        boardContentBg: '#f2e9f7',
         msgBubbleBgBot: '#fff',
         inputPlaceholder: 'Reply here...',
         inputDisableBg: '#fff',
@@ -90,6 +90,7 @@ export default {
           this.inputDisable = response.disableInput
           this.inputPassword = response.password
           this.messageData.push(replyMessage)
+          // this.messageData = [replyMessage]
 
           // finish
           this.botTyping = false
