@@ -7,6 +7,7 @@
       v-for="(item, index) in mainData",
       :key="index",
       :message="item",
+      :isLatest="(index == mainData.length - 1 ? true : false)"
     )
     .qkb-board-content__bot-typing(v-if="botTyping")
       slot(name="botTyping")

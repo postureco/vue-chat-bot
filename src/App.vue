@@ -54,8 +54,20 @@ export default {
         this.botTyping = false
         this.messageData.push({
           agent: 'bot',
-          type: 'text',
-          text: 'Hello'
+          type: 'button',
+          text: 'Hello',
+          options: [
+            {
+              'text': 'option 1',
+              'value': 'a',
+              'action': 'postback'
+            },
+            {
+              'text': 'option 2',
+              'value': 'b',
+              'action': 'postback'
+            }
+          ]
         })
       }, 1000)
     },

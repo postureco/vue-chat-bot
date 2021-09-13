@@ -5,12 +5,13 @@
   .qkb-msg-bubble-component__options-wrapper
     .qkb-mb-button-options__item(
       v-for="(item, index) in mainData.options",
-      :class="{ active: selectedItem === item.value }",
+      :class="{ active: selectedItem === item.value, hidden: disabled}",
       :key="index"
     )
       button.qkb-mb-button-options__btn(
         v-if="item.action === 'postback'",
         @click="selectOption(item)"
+        :disabled="disabled"
       )
         span {{ item.text }}
       a.qkb-mb-button-options__btn.qkb-mb-button-options__url(
@@ -26,6 +27,10 @@ export default {
   props: {
     mainData: {
       type: Object
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
 
