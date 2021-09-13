@@ -6,6 +6,9 @@
   height: $header-height;
   padding: 5px 15px;
 }
+.top-right .qkb-board-header {
+  display: none;
+}
 
 .qkb-board-header__title {
   font-weight: bold;
