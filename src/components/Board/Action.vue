@@ -47,6 +47,10 @@ export default {
     inputPassword: {
       type: Boolean,
       default: false
+    },
+    msgCount: {
+      type: Number,
+      default: 0
     }
   },
 
@@ -80,6 +84,13 @@ export default {
 
   mounted () {
     this.$refs.qkbMessageInput.focus()
+  },
+
+  // focus text field on new messages (if appropriate)
+  watch: {
+    msgCount (newVal) {
+      this.$refs.qkbMessageInput.focus()
+    }
   },
 
   methods: {

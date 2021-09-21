@@ -13,6 +13,7 @@
         :main-data="messages"
       )
       BoardAction(
+        :msg-count="messages.length"
         :input-password="inputPassword"
         :input-disable="inputDisable",
         :input-placeholder="optionsMain.inputPlaceholder",

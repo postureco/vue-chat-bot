@@ -57,6 +57,7 @@ export default {
           agent: 'bot',
           type: 'button',
           text: 'Hello',
+          disableInput: true,
           options: [
             {
               'text': 'option 1',
