@@ -15,12 +15,50 @@
   position: relative;
 }
 
+.qkb-msg-caption {
+  display: flex;
+  position: relative;
+  opacity: 0.7;
+
+  padding-bottom: 1rem;
+
+  &.qkb-msg-caption--bot {
+    .qkb-msg-caption-component {
+      margin-right: 2.5rem;
+      margin-left: 1rem;
+    }
+  }
+
+  .qkb-msg-caption-component__text {
+    position: relative;
+    top: -0.5rem;
+    padding: 0 1.5rem 0 .5rem;
+    font-size: 0.8rem;
+
+    .qkb-msg-bubble__typing-indicator {
+      display: inline-block;
+      margin-left: .2rem;
+      opacity: 1.0;
+    }
+  }
+
+  .qkb-msg-avatar {
+    top: -0.5rem;
+    left: 0.75rem;
+  }
+}
+
 .qkb-msg-avatar {
   flex-grow: 1;
   flex: none;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+
+  &.qkb-msg-avatar-small {
+    width: $avatar-size-small;
+    height: $avatar-size-small;
+  }
 }
 
 .qkb-msg-avatar__img {
