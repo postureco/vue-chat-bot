@@ -15,7 +15,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest demo",
     "build-bundle": "vue-cli-service build --target lib --name vue-chat-bot ./src/vue-chat-bot.js",
-	"prepare": "npm run build-bundle",
+    "prepare": "npm run build-bundle",
     "release": "standard-version && git push --follow-tags",
     "release:next": "standard-version --prerelease next && git push --follow-tags origin dev && npm publish --tag next",
     "lint": "vue-cli-service lint --fix"
@@ -58,5 +58,8 @@
     "url": "https://github.com/cuoool/vue-chat-bot.git/issues"
   },
   "homepage": "https://github.com/cuoool/vue-chat-bot.git#readme",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "yarn": "^1.22.15"
+  }
 }

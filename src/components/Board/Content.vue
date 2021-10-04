@@ -11,17 +11,19 @@
     )
     .qkb-board-content__bot-typing(v-if="botTyping")
       slot(name="botTyping")
-        message-typing
+        message-typing-slim
 </template>
 
 <script>
 import MessageBubble from '../MessageBubble/Main'
-import MessageTyping from '../MessageBubble/Typing'
+// import MessageTyping from '../MessageBubble/Typing'
+import MessageTypingSlim from '../MessageBubble/TypingSlim'
 
 export default {
   components: {
     MessageBubble,
-    MessageTyping
+    // MessageTyping
+    MessageTypingSlim
   },
 
   props: {
@@ -46,6 +48,16 @@ export default {
         this.updateScroll()
       })
     }
+
+    // // uncomment this if using the traditional avatar + "..."
+    // // typing indicator to force scroll
+    // botTyping: function (newVal, oldVal) {
+    //   if (newVal === true) {
+    //     this.$nextTick(() => {
+    //       this.updateScroll()
+    //     })
+    //   }
+    // }
   },
 
   methods: {
