@@ -42,6 +42,9 @@ export default {
   top: ${bubbleBtnSize + 20}px;
   bottom: initial;
 }
+.movable .qkb-board {
+  bottom: initial;
+}
 .qkb-board-header {
   background-color: ${colorScheme};
 }

@@ -3,17 +3,19 @@
   img(
     alt="Vue Bot UI",
     src="./assets/logo.png"
+    style="z-index: 100"
   )
-  VueChatBot(
-    :options="botOptions",
-    :messages="messageData",
-    :bot-typing="botTyping",
-    :input-disable="inputDisable",
-    :input-password="inputPassword"
-    :is-open="true",
-    @init="botStart",
-    @msg-send="msgSend",
-  )
+  div(style="width: 100%;display:flex; justify-content: center")
+    VueChatBot(
+      :options="botOptions",
+      :messages="messageData",
+      :bot-typing="botTyping",
+      :input-disable="inputDisable",
+      :input-password="inputPassword"
+      :is-open="true",
+      @init="botStart",
+      @msg-send="msgSend",
+    )
 </template>
 <script>
 import BotIcon from './assets/icons/bot.png'
@@ -39,7 +41,8 @@ export default {
         inputPlaceholder: 'Reply here...',
         inputDisableBg: '#fff',
         inputDisablePlaceholder: 'Tap a button above to respond',
-        topRight: true
+        topRight: false,
+        movable: true
       }
     }
   },

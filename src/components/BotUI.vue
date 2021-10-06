@@ -133,6 +133,9 @@ export default {
       if (this.optionsMain.topRight) {
         classes.push('top-right')
       }
+      if (this.optionsMain.movable) {
+        classes.push('movable')
+      }
 
       return classes
     }
