@@ -6,7 +6,6 @@
     v-if="componentType",
     :is="componentType",
     :main-data="message"
-    :class="{'qkb-active-msg': isLatest}"
     :disabled="!isLatest"
   )
   .qkb-msg-bubble__time(v-if="message.createdAt")
@@ -34,9 +33,10 @@ export default {
 
   computed: {
     bubbleClass () {
-      return this.message.agent === 'bot'
+      const agent = (this.message.agent === 'bot'
         ? 'qkb-msg-bubble--bot'
-        : 'qkb-msg-bubble--user'
+        : 'qkb-msg-bubble--user')
+      return agent + (this.isLatest ? ' qkb-active-msg' : '')
     },
 
     // Define the message type and return the specific component
