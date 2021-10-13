@@ -89,7 +89,7 @@ export default {
   // focus text field on new messages (if appropriate)
   watch: {
     msgCount (newVal) {
-      this.$refs.qkbMessageInput.focus()
+      this.$nextTick(() => { this.$refs.qkbMessageInput.focus() })
     }
   },
 
