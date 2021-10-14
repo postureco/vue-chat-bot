@@ -75,9 +75,15 @@ export default {
           ]
         })
       }, 1000)
+
       setTimeout(() => {
-        this.botTyping = true
-      }, 2000)
+        this.botTyping = false
+        this.messageData.push({
+          agent: 'bot',
+          type: 'text',
+          text: 'Lorem ipsum dolor sit amet.'
+        })
+      }, 4000)
     },
 
     msgSend (value) {

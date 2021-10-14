@@ -6,7 +6,6 @@
     v-if="componentType",
     :is="componentType",
     :main-data="message"
-    :disabled="!isLatest"
   )
   .qkb-msg-bubble__time(v-if="message.createdAt")
     | {{ message.createdAt }}
