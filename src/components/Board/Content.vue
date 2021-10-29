@@ -9,6 +9,7 @@
       :message="item",
       :isLatest="(index == mainData.length - 1 ? true : false)"
     )
+      slot(v-for="(_, name) in $slots" :name="name" :slot="name")
     .qkb-board-content__bot-typing(v-if="botTyping")
       slot(name="botTyping")
         message-typing-slim

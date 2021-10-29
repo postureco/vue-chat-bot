@@ -6,7 +6,9 @@
     v-if="componentType",
     :is="componentType",
     :main-data="message"
+    :is-latest="isLatest"
   )
+    slot(v-for="(_, name) in $slots" :name="name" :slot="name")
   .qkb-msg-bubble__time(v-if="message.createdAt")
     | {{ message.createdAt }}
 </template>

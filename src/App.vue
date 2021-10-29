@@ -16,6 +16,10 @@
       @init="botStart",
       @msg-send="msgSend",
     )
+      template(
+        v-slot:activeMsgAction
+        v-if="test"
+      ) &nbsp;⇢
 </template>
 <script>
 import BotIcon from './assets/icons/bot.png'
@@ -41,12 +45,15 @@ export default {
         inputPlaceholder: 'Reply here...',
         inputDisableBg: '#fff',
         inputDisablePlaceholder: 'Tap a button above to respond',
-        topRight: false,
-        movable: true
+        topRight: false
       }
     }
   },
-
+  computed: {
+    test () {
+      return true
+    }
+  },
   methods: {
     botStart () {
       // Get token if you want to build a private bot
@@ -54,27 +61,27 @@ export default {
 
       // Fake typing for the first message
       this.botTyping = true
-      setTimeout(() => {
-        this.botTyping = false
-        this.messageData.push({
-          agent: 'bot',
-          type: 'button',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          disableInput: true,
-          options: [
-            {
-              'text': 'option 1',
-              'value': 'a',
-              'action': 'postback'
-            },
-            {
-              'text': 'option 2',
-              'value': 'b',
-              'action': 'postback'
-            }
-          ]
-        })
-      }, 1000)
+      // setTimeout(() => {
+      //   this.botTyping = false
+      //   this.messageData.push({
+      //     agent: 'bot',
+      //     type: 'button',
+      //     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      //     disableInput: true,
+      //     options: [
+      //       {
+      //         'text': 'option 1',
+      //         'value': 'a',
+      //         'action': 'postback'
+      //       },
+      //       {
+      //         'text': 'option 2',
+      //         'value': 'b',
+      //         'action': 'postback'
+      //       }
+      //     ]
+      //   })
+      // }, 1000)
 
       setTimeout(() => {
         this.botTyping = false
@@ -83,7 +90,7 @@ export default {
           type: 'text',
           text: 'Lorem ipsum dolor sit amet.'
         })
-      }, 4000)
+      }, 1000)
     },
 
     msgSend (value) {

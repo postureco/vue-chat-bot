@@ -8,10 +8,12 @@
         :bot-title="optionsMain.botTitle",
         @close-bot="botToggle"
       )
+        slot(v-for="(_, name) in $slots" :name="name" :slot="name")
       BoardContent(
         :bot-typing="botTyping",
         :main-data="messages"
       )
+        slot(v-for="(_, name) in $slots" :name="name" :slot="name")
       BoardAction(
         :msg-count="messages.length"
         :input-password="inputPassword"
