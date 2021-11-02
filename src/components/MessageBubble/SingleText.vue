@@ -2,9 +2,9 @@
 .qkb-msg-bubble-component.qkb-msg-bubble-component--single-text
   .qkb-msg-bubble-component__text(
     v-if="mainData.type === 'text'"
-    :class="{ 'has-msg-action' : hasMsgAction && isLatest}"
+    :class="{ 'has-msg-action' : hasMsgAction && isLatest && isBot}"
     ) {{ mainData.text }}
-    slot(name="activeMsgAction" v-if="isLatest")
+    slot(name="activeMsgAction" v-if="isLatest && isBot")
   .qkb-msg-bubble-component__text(v-if="['html', 'button'].includes(mainData.type)" v-html="mainData.text")
 </template>
 <script>
@@ -14,6 +14,10 @@ export default {
       type: Object
     },
     isLatest: {
+      type: Boolean,
+      default: false
+    },
+    isBot: {
       type: Boolean,
       default: false
     }

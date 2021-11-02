@@ -7,6 +7,7 @@
     :is="componentType",
     :main-data="message"
     :is-latest="isLatest"
+    :is-bot="isBot"
   )
     slot(v-for="(_, name) in $slots" :name="name" :slot="name")
   .qkb-msg-bubble__time(v-if="message.createdAt")
@@ -31,8 +32,10 @@ export default {
       default: false
     }
   },
-
   computed: {
+    isBot () {
+      return (this.message.agent === 'bot')
+    },
     bubbleClass () {
       const agent = (this.message.agent === 'bot'
         ? 'qkb-msg-bubble--bot'
