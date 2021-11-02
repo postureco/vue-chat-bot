@@ -732,21 +732,24 @@ var Contentvue_type_template_id_4783ca13_lang_pug_staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/components/Board/Content.vue?vue&type=template&id=4783ca13&lang=pug&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ed8bb762-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/Main.vue?vue&type=template&id=a07263ce&lang=pug&
-var Mainvue_type_template_id_a07263ce_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"qkb-msg-bubble",class:_vm.bubbleClass},[(_vm.message.agent === 'bot')?_c('div',{staticClass:"qkb-msg-avatar"},[_c('div',{staticClass:"qkb-msg-avatar__img"})]):_vm._e(),(_vm.componentType)?_c(_vm.componentType,{tag:"component",attrs:{"main-data":_vm.message,"is-latest":_vm.isLatest}},[_vm._l((_vm.$slots),function(_,name){return _vm._t(name,null,{"slot":name})})],2):_vm._e(),(_vm.message.createdAt)?_c('div',{staticClass:"qkb-msg-bubble__time"},[_vm._v(_vm._s(_vm.message.createdAt))]):_vm._e()],1)}
-var Mainvue_type_template_id_a07263ce_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ed8bb762-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/Main.vue?vue&type=template&id=58341628&lang=pug&
+var Mainvue_type_template_id_58341628_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"qkb-msg-bubble",class:_vm.bubbleClass},[(_vm.message.agent === 'bot')?_c('div',{staticClass:"qkb-msg-avatar"},[_c('div',{staticClass:"qkb-msg-avatar__img"})]):_vm._e(),(_vm.componentType)?_c(_vm.componentType,{tag:"component",attrs:{"main-data":_vm.message,"is-latest":_vm.isLatest,"is-bot":_vm.isBot}},[_vm._l((_vm.$slots),function(_,name){return _vm._t(name,null,{"slot":name})})],2):_vm._e(),(_vm.message.createdAt)?_c('div',{staticClass:"qkb-msg-bubble__time"},[_vm._v(_vm._s(_vm.message.createdAt))]):_vm._e()],1)}
+var Mainvue_type_template_id_58341628_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/MessageBubble/Main.vue?vue&type=template&id=a07263ce&lang=pug&
+// CONCATENATED MODULE: ./src/components/MessageBubble/Main.vue?vue&type=template&id=58341628&lang=pug&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ed8bb762-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/SingleText.vue?vue&type=template&id=37515028&lang=pug&
-var SingleTextvue_type_template_id_37515028_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"qkb-msg-bubble-component qkb-msg-bubble-component--single-text"},[(_vm.mainData.type === 'text')?_c('div',{staticClass:"qkb-msg-bubble-component__text"},[_vm._v(_vm._s(_vm.mainData.text)),(_vm.isLatest)?_vm._t("activeMsgAction"):_vm._e()],2):_vm._e(),(['html', 'button'].includes(_vm.mainData.type))?_c('div',{staticClass:"qkb-msg-bubble-component__text",domProps:{"innerHTML":_vm._s(_vm.mainData.text)}}):_vm._e()])}
-var SingleTextvue_type_template_id_37515028_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ed8bb762-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/SingleText.vue?vue&type=template&id=3eea11cc&lang=pug&
+var SingleTextvue_type_template_id_3eea11cc_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"qkb-msg-bubble-component qkb-msg-bubble-component--single-text"},[(_vm.mainData.type === 'text')?_c('div',{staticClass:"qkb-msg-bubble-component__text",class:{ 'has-msg-action' : _vm.hasMsgAction && _vm.isLatest && _vm.isBot}},[_vm._v(_vm._s(_vm.mainData.text)),(_vm.isLatest && _vm.isBot)?_vm._t("activeMsgAction"):_vm._e()],2):_vm._e(),(['html', 'button'].includes(_vm.mainData.type))?_c('div',{staticClass:"qkb-msg-bubble-component__text",domProps:{"innerHTML":_vm._s(_vm.mainData.text)}}):_vm._e()])}
+var SingleTextvue_type_template_id_3eea11cc_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/MessageBubble/SingleText.vue?vue&type=template&id=37515028&lang=pug&
+// CONCATENATED MODULE: ./src/components/MessageBubble/SingleText.vue?vue&type=template&id=3eea11cc&lang=pug&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/SingleText.vue?vue&type=script&lang=js&
+//
+//
+//
 //
 //
 //
@@ -761,6 +764,15 @@ var SingleTextvue_type_template_id_37515028_lang_pug_staticRenderFns = []
     isLatest: {
       type: Boolean,
       "default": false
+    },
+    isBot: {
+      type: Boolean,
+      "default": false
+    }
+  },
+  computed: {
+    hasMsgAction: function hasMsgAction() {
+      return this.$scopedSlots.activeMsgAction;
     }
   }
 });
@@ -776,8 +788,8 @@ var SingleTextvue_type_template_id_37515028_lang_pug_staticRenderFns = []
 
 var SingleText_component = normalizeComponent(
   MessageBubble_SingleTextvue_type_script_lang_js_,
-  SingleTextvue_type_template_id_37515028_lang_pug_render,
-  SingleTextvue_type_template_id_37515028_lang_pug_staticRenderFns,
+  SingleTextvue_type_template_id_3eea11cc_lang_pug_render,
+  SingleTextvue_type_template_id_3eea11cc_lang_pug_staticRenderFns,
   false,
   null,
   null,
@@ -876,6 +888,7 @@ var ButtonOptions_component = normalizeComponent(
 //
 //
 //
+//
 
 
 /* harmony default export */ var Mainvue_type_script_lang_js_ = ({
@@ -893,6 +906,9 @@ var ButtonOptions_component = normalizeComponent(
     }
   },
   computed: {
+    isBot: function isBot() {
+      return this.message.agent === 'bot';
+    },
     bubbleClass: function bubbleClass() {
       var agent = this.message.agent === 'bot' ? 'qkb-msg-bubble--bot' : 'qkb-msg-bubble--user';
       return agent + (this.isLatest ? ' qkb-active-msg' : '');
@@ -926,8 +942,8 @@ var ButtonOptions_component = normalizeComponent(
 
 var Main_component = normalizeComponent(
   MessageBubble_Mainvue_type_script_lang_js_,
-  Mainvue_type_template_id_a07263ce_lang_pug_render,
-  Mainvue_type_template_id_a07263ce_lang_pug_staticRenderFns,
+  Mainvue_type_template_id_58341628_lang_pug_render,
+  Mainvue_type_template_id_58341628_lang_pug_staticRenderFns,
   false,
   null,
   null,

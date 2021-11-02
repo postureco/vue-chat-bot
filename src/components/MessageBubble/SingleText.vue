@@ -24,7 +24,6 @@ export default {
   },
   computed: {
     hasMsgAction () {
-      console.log('slots', this.$scopedSlots.activeMsgAction)
       return this.$scopedSlots.activeMsgAction
     }
   }
