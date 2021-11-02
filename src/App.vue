@@ -45,7 +45,8 @@ export default {
         inputPlaceholder: 'Reply here...',
         inputDisableBg: '#fff',
         inputDisablePlaceholder: 'Tap a button above to respond',
-        topRight: false
+        topRight: false,
+        movable: true
       }
     }
   },
