@@ -13,4 +13,10 @@
 @import './components/content';
 @import './components/action';
 
+// 
+// // For testing with posture styles (relative paths in Jason's working dir)
+// @import '../../../../postureco/client/src/style/scss/bot';
 
+
+// Alt style overrides
+@import './skins/presentation';

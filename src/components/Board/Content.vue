@@ -8,6 +8,7 @@
       :key="index",
       :message="item",
       :isLatest="(index == mainData.length - 1 ? true : false)"
+      :isLastOfAgent="item.lastOfAgent || false"
     )
       slot(v-for="(_, name) in $slots" :name="name" :slot="name")
     .qkb-board-content__bot-typing(v-if="botTyping")
@@ -46,7 +47,7 @@ export default {
   watch: {
     mainData: function (newVal) {
       this.$nextTick(() => {
-        this.updateScroll()
+        // this.updateScroll()
       })
     }
 

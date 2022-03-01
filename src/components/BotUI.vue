@@ -11,7 +11,7 @@
         slot(v-for="(_, name) in $slots" :name="name" :slot="name")
       BoardContent(
         :bot-typing="botTyping",
-        :main-data="messages"
+        :main-data="messagesMeta"
       )
         slot(v-for="(_, name) in $slots" :name="name" :slot="name")
       BoardAction(
@@ -41,6 +41,7 @@
     .qkb-msg-avatar__img(v-if="optionsMain.botAvatarImg")
 </template>
 <script>
+import _ from 'lodash'
 import EventBus from '../helpers/event-bus'
 import BoardHeader from './Board/Header'
 import BoardContent from './Board/Content'
@@ -121,6 +122,34 @@ export default {
   },
 
   computed: {
+
+    // adding extra info to messages
+    messagesMeta () {
+      let metaMessages = []
+
+      let nextIdxWithinAgent = {}
+      let lastOfEachAgent = {}
+
+      _.forEach(this.messages, (m, i) => {
+        let ag = _.get(nextIdxWithinAgent, m['agent'], 0)
+        m['idxWitinAgent'] = ag
+        nextIdxWithinAgent[m['agent']] = ag + 1
+
+        lastOfEachAgent[m['agent']] = i
+
+        m['lastOfAgent'] = false
+
+        metaMessages.push(m)
+      })
+
+      console.log('LAST....', lastOfEachAgent)
+      _.forEach(lastOfEachAgent, (v, k) => {
+        metaMessages[v]['lastOfAgent'] = true
+      })
+
+      return metaMessages
+    },
+
     optionsMain () {
       return { ...this.defaultOptions, ...this.options }
     },
@@ -137,6 +166,9 @@ export default {
       }
       if (this.optionsMain.movable) {
         classes.push('movable')
+      }
+      if (this.optionsMain.presentation) {
+        classes.push('presentation')
       }
 
       return classes

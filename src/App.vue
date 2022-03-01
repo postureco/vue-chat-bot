@@ -39,6 +39,7 @@ export default {
       inputDisable: false,
       inputPassword: false,
       botOptions: {
+        presentation: true,
         botAvatarImg: BotIcon,
         boardContentBg: '#f2e9f7',
         msgBubbleBgBot: '#fff',

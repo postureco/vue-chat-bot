@@ -1,0 +1,200 @@
+// Trying to wrangle the existing components and functionality into
+// a different presentation mode (less scroll; more focus on individual
+// messages from the "bot") without having to mess with pug or the
+// components. Mostly bc I'm lazy, but also bc the functionality still
+// makes some sense as is.
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+
+
+
+// vars copied from palette2
+$bg: #ffffff;
+$base: lighten(#ffd166, 25%);
+$baseaccent: darken($base, 5%);
+
+// these four colors are what get used most regularly
+$primary: #ef476f; // most buttons and such
+$secondary: #118ab2; // alt color
+$accent: #ffd166; // another alt
+$success: #06d6a0;
+
+
+
+// Chat bot style overrides
+
+.qkb-bot-ui.presentation {  // closed at end of doc
+
+
+
+width: 100%;
+font-family: "Roboto", sans-serif;
+
+.qkb-board {
+  width: 100%;
+  align-items: center;
+} // end qkb-board
+
+
+
+& .qkb-board-action {
+  border: 3px solid $baseaccent;
+  background: #fff;
+  border-radius: 10px;
+  opacity: 1.0;
+  transition: opacity 0.3s;
+  width: 400px;
+
+  &.qkb-board-action--disabled {
+    opacity: 0.0;
+  }
+}
+.qkb-board-action__wrapper, .qkb-board-action__input {
+  background: transparent;
+}
+
+.qkb-action-icon {
+  fill: $primary;
+  color: $primary;
+}
+
+
+.qkb-board {
+  box-shadow: none !important;
+  background: transparent!important;
+}
+
+.qkb-board-content {
+  overflow: hidden;
+  background-color: transparent !important;
+  scroll-behavior: smooth;
+
+  .qkb-board-content__bubbles {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,1) 10%);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  // msg buttons
+  .qkb-msg-bubble-component__options-wrapper {
+    justify-content: center;
+    &.qkb-interacted { display: none; }
+  }
+}
+
+// Message styles
+
+.qkb-msg-bubble {
+
+  .qkb-msg-avatar {
+    display: none;
+  }
+
+  .qkb-msg-bubble-component__text {
+    transition: all 0.3s;
+    padding: 1.5rem 2rem;
+  }
+
+  &.qkb-active-msg {
+    opacity: 1.0;
+    transform: scale(1.05);
+  }
+
+  &.qkb-msg-bubble--user {
+    .qkb-msg-bubble-component__text {
+      color: #777777;
+      font-weight: 500;
+      font-size: 1rem;
+      background-color: transparent !important; //$primary !important;
+    }
+  }
+  &.qkb-msg-bubble--bot {
+    .qkb-msg-bubble-component {
+      margin: 0;
+    }
+    .qkb-msg-bubble-component__text {
+      color: #333;
+      font-weight: 400;
+      border-radius: 1rem;
+      font-size: 1.2em;
+      line-height: 1.5em;
+      background-color: lighten($base, 2%) !important; //$primary !important;
+    }
+  }
+}
+
+
+.qkb-mb-button-options__btn {
+  color: $primary;
+  border-color: $primary;
+
+  &:hover {
+    color: #fff;
+    background-color: $primary;
+  }
+}
+
+
+// Message layout and stuff
+
+.qkb-msg-bubble {
+  margin: 0;
+  transition: all 0.3s;
+  transform: translateY(0);
+  opacity: 1;
+  overflow: hidden;
+  max-height: 1000px;
+  position: relative;
+  animation: slidedown 0.3s ease;
+
+  @keyframes slidedown {
+    0% {
+        opacity: 0;
+        top: -3rem;
+        // transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        top: 0;
+        // transform: translateY(0);
+    }
+  }
+
+
+  // only show the last message from each agent
+  &.qkb-msg-bubble--bot, &.qkb-msg-bubble--user {
+    transform: translateY(100%);
+    opacity: 0;
+    // display: none;
+    // max-height: 0;
+    // padding: 0;
+  }
+  &.qkb-active-msg, &.qkb-last--user {
+    transform: translateY(0);
+    // display: flex;
+    max-height: 1000px;
+    opacity: 1;
+  }
+
+  // user messages
+  &.qkb-msg-bubble--user {
+    .qkb-msg-bubble-component {
+      margin: 0;
+    }
+  }
+}
+
+// bot typing message
+.qkb-msg-caption.qkb-msg-caption--bot { display: none; }
+
+}
