@@ -37,6 +37,11 @@ export default {
     botTyping: {
       type: Boolean,
       default: false
+    },
+
+    autoScroll: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -46,9 +51,11 @@ export default {
 
   watch: {
     mainData: function (newVal) {
-      this.$nextTick(() => {
-        // this.updateScroll()
-      })
+      if (this.autoScroll) {
+        this.$nextTick(() => {
+          this.updateScroll()
+        })
+      }
     }
 
     // // uncomment this if using the traditional avatar + "..."

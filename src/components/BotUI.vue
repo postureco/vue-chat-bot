@@ -12,6 +12,7 @@
       BoardContent(
         :bot-typing="botTyping",
         :main-data="messagesMeta"
+        :auto-scroll="isNotPresentation"
       )
         slot(v-for="(_, name) in $slots" :name="name" :slot="name")
       BoardAction(
@@ -122,6 +123,10 @@ export default {
   },
 
   computed: {
+
+    isNotPresentation () {
+      return (!this.optionsMain.presentation)
+    },
 
     // adding extra info to messages
     messagesMeta () {
