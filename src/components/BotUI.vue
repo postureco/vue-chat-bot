@@ -142,7 +142,6 @@ export default {
         metaMessages.push(m)
       })
 
-      console.log('LAST....', lastOfEachAgent)
       _.forEach(lastOfEachAgent, (v, k) => {
         metaMessages[v]['lastOfAgent'] = true
       })
