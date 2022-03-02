@@ -62,13 +62,13 @@ font-family: "Roboto", sans-serif;
 
 
 .qkb-board {
-  box-shadow: none !important;
-  background: transparent!important;
+  box-shadow: none;
+  background: transparent;
 }
 
 .qkb-board-content {
   overflow: hidden;
-  background-color: transparent !important;
+  background-color: transparent;
   scroll-behavior: smooth;
 
   .qkb-board-content__bubbles {
@@ -113,7 +113,7 @@ font-family: "Roboto", sans-serif;
       color: #777777;
       font-weight: 500;
       font-size: 1rem;
-      background-color: transparent !important; //$primary !important;
+      background-color: transparent; //$primary !important;
     }
   }
   &.qkb-msg-bubble--bot {
@@ -126,7 +126,7 @@ font-family: "Roboto", sans-serif;
       border-radius: 1rem;
       font-size: 1.2em;
       line-height: 1.5em;
-      background-color: lighten($base, 2%) !important; //$primary !important;
+      background-color: lighten($base, 2%); //$primary !important;
     }
   }
 }
