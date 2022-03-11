@@ -2,6 +2,7 @@
 .qkb-msg-bubble(:class="bubbleClass")
   .qkb-msg-avatar(v-if="message.agent === 'bot'")
     .qkb-msg-avatar__img &nbsp;
+  .qkb-msg-img.qkb-msg-img__ext(ref="qkb-msg-img__ext")
   component(
     v-if="componentType",
     :is="componentType",
@@ -34,6 +35,26 @@ export default {
     isLastOfAgent: {
       type: Boolean,
       default: false
+    },
+    imgTarget: {
+      type: String,
+      default: '.qkb-msg-img__ext'
+    }
+  },
+  mounted () {
+    if (this.message.image && this.imgTarget) {
+      this.$nextTick(() => {
+        const targets = document.querySelectorAll(this.imgTarget)
+        if (targets && targets.length) {
+          targets[targets.length - 1].innerHTML = `<img class="qkb-msg-img-src" src="${this.message.image}" />`
+        }
+      })
+    } else if (this.imgTarget) {
+      // remove previous image
+      const targets = document.querySelectorAll(this.imgTarget)
+      if (targets && targets.length) {
+        targets[targets.length - 1].innerHTML = ''
+      }
     }
   },
   computed: {

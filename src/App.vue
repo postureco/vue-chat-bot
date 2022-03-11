@@ -5,6 +5,7 @@
     src="./assets/logo.png"
     style="z-index: 100"
   )
+  .test-img-target
   div(style="width: 100%;display:flex; justify-content: center")
     VueChatBot(
       :options="botOptions",
@@ -13,6 +14,8 @@
       :input-disable="inputDisable",
       :input-password="inputPassword"
       :is-open="true",
+      :showImages="true"
+      imgTarget=".test-img-target"
       @init="botStart",
       @msg-send="msgSend",
     )
@@ -90,7 +93,8 @@ export default {
         this.messageData.push({
           agent: 'bot',
           type: 'text',
-          text: 'Lorem ipsum dolor sit amet.'
+          text: 'Lorem ipsum dolor sit amet.',
+          image: 'https://i.imgur.com/hp7Fp1U.gif'
         })
       }, 1000)
     },

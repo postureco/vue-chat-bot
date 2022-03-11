@@ -13,6 +13,7 @@
         :bot-typing="botTyping",
         :main-data="messagesMeta"
         :auto-scroll="isNotPresentation"
+        :img-target="(showImages ? imgTarget : false)"
       )
         slot(v-for="(_, name) in $slots" :name="name" :slot="name")
       BoardAction(
@@ -94,6 +95,15 @@ export default {
     },
 
     topRight: {
+      type: Boolean,
+      default: false
+    },
+
+    imgTarget: {
+      type: String
+    },
+
+    showImages: {
       type: Boolean,
       default: false
     }

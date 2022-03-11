@@ -2,7 +2,8 @@ export const fakeMessages = [
   {
     'type': 'text',
     'text': 'Hello. Have a nice day!',
-    'disableInput': false
+    'disableInput': false,
+    'image': 'https://i.imgur.com/hp7Fp1U.gif'
   },
   {
     'type': 'button',
@@ -19,13 +20,15 @@ export const fakeMessages = [
         'action': 'postback'
       }
     ],
-    'disableInput': true
+    'disableInput': true,
+    'image': 'https://i.imgur.com/hp7Fp1U.gif'
   },
   {
     'type': 'text',
     'text': 'Try entering a password.',
     'disableInput': false,
-    'password': true
+    'password': true,
+    'image': 'https://i.imgur.com/hp7Fp1U.gif'
   },
   {
     'type': 'text',

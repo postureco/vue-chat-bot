@@ -9,6 +9,7 @@
       :message="item",
       :isLatest="(index == mainData.length - 1 ? true : false)"
       :isLastOfAgent="item.lastOfAgent || false"
+      :imgTarget="imgTarget"
     )
       slot(v-for="(_, name) in $slots" :name="name" :slot="name")
     .qkb-board-content__bot-typing(v-if="botTyping")
@@ -42,6 +43,10 @@ export default {
     autoScroll: {
       type: Boolean,
       default: true
+    },
+
+    imgTarget: {
+      type: String
     }
   },
 

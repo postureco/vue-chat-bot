@@ -168,6 +168,14 @@ font-family: "Roboto", sans-serif;
     }
   }
 
+  // // images
+  // .qkb-msg-img {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 50%;
+  //   transform: translate(-50% -100%);
+  // }
+
 
   // only show the last message from each agent
   &.qkb-msg-bubble--bot, &.qkb-msg-bubble--user {

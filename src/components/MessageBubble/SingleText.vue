@@ -1,5 +1,6 @@
 <template lang="pug">
 .qkb-msg-bubble-component.qkb-msg-bubble-component--single-text
+  .qkb-msg-img.qkb-msg-img__int(ref="qkb-msg-img__int")
   .qkb-msg-bubble-component__text(
     v-if="mainData.type === 'text'"
     :class="{ 'has-msg-action' : hasMsgAction && isLatest && isBot}"
