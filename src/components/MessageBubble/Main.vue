@@ -42,6 +42,9 @@ export default {
     }
   },
   mounted () {
+    /* eslint-disable no-console */
+    console.log('img?', this.message.image, this.imgTarget)
+
     if (this.message.image && this.imgTarget) {
       this.$nextTick(() => {
         const targets = document.querySelectorAll(this.imgTarget)
