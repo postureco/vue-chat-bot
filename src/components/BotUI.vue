@@ -100,7 +100,7 @@ export default {
     },
 
     imgTarget: {
-      type: String
+      type: [String, Boolean]
     },
 
     showImages: {

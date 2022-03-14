@@ -37,7 +37,7 @@ export default {
       default: false
     },
     imgTarget: {
-      type: String,
+      type: [String, Boolean],
       default: '.qkb-msg-img__ext'
     }
   },
