@@ -5,7 +5,7 @@
     src="./assets/logo.png"
     style="z-index: 100"
   )
-  .test-img-target
+  #test-img-target
   div(style="width: 100%;display:flex; justify-content: center")
     VueChatBot(
       :options="botOptions",
@@ -15,7 +15,7 @@
       :input-password="inputPassword"
       :is-open="true",
       :showImages="true"
-      imgTarget=".test-img-target"
+      imgTarget="#test-img-target"
       @init="botStart",
       @msg-send="msgSend",
     )
