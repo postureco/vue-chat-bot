@@ -42,22 +42,15 @@ export default {
     }
   },
   mounted () {
-    /* eslint-disable no-console */
-    console.log('img?', this.message.image, this.imgTarget)
-
     if (this.message.image && this.imgTarget) {
       this.$nextTick(() => {
         const targets = document.querySelectorAll(this.imgTarget)
-        /* eslint-disable no-console */
-        console.log('target', this.imgTarget, targets, this.message.image)
         if (targets && targets.length) {
           targets[targets.length - 1].innerHTML = `<img class="qkb-msg-img-src" src="${this.message.image}" />`
         }
       })
     } else if (this.imgTarget) {
       // remove previous image
-      /* eslint-disable no-console */
-      console.log('removing', this.message.image)
       const targets = document.querySelectorAll(this.imgTarget)
       if (targets && targets.length) {
         targets[targets.length - 1].innerHTML = ''
