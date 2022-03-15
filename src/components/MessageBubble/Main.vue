@@ -41,22 +41,7 @@ export default {
       default: '.qkb-msg-img__ext'
     }
   },
-  mounted () {
-    if (this.message.image && this.imgTarget) {
-      this.$nextTick(() => {
-        const targets = document.querySelectorAll(this.imgTarget)
-        if (targets && targets.length) {
-          targets[targets.length - 1].innerHTML = `<img class="qkb-msg-img-src" src="${this.message.image}" />`
-        }
-      })
-    } else if (this.imgTarget) {
-      // remove previous image
-      const targets = document.querySelectorAll(this.imgTarget)
-      if (targets && targets.length) {
-        targets[targets.length - 1].innerHTML = ''
-      }
-    }
-  },
+
   computed: {
     isBot () {
       return (this.message.agent === 'bot')

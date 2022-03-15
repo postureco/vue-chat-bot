@@ -94,7 +94,10 @@ export default {
           agent: 'bot',
           type: 'text',
           text: 'Lorem ipsum dolor sit amet.',
-          image: 'https://i.imgur.com/hp7Fp1U.gif'
+          'image': {
+            'url': 'https://i.imgur.com/hp7Fp1U.gif',
+            'msgDuration': 0
+          }
         })
       }, 1000)
     },

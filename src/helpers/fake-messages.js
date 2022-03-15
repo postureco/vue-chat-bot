@@ -3,7 +3,7 @@ export const fakeMessages = [
     'type': 'text',
     'text': 'Hello. Have a nice day!',
     'disableInput': false,
-    'image': 'https://i.imgur.com/hp7Fp1U.gif'
+    'image': {} // force remove existing image
   },
   {
     'type': 'button',
@@ -20,15 +20,13 @@ export const fakeMessages = [
         'action': 'postback'
       }
     ],
-    'disableInput': true,
-    'image': 'https://i.imgur.com/hp7Fp1U.gif'
+    'disableInput': true
   },
   {
     'type': 'text',
     'text': 'Try entering a password.',
     'disableInput': false,
-    'password': true,
-    'image': 'https://i.imgur.com/hp7Fp1U.gif'
+    'password': true
   },
   {
     'type': 'text',
