@@ -96,7 +96,7 @@ export default {
         } else {
           this.removeImage() // force empty image container if url is omitted
         }
-      } else if (this.latestMessage.agent === 'bot') {
+      } else if (this.latestMessage && this.latestMessage.agent === 'bot') {
         // update msg counter and remove images as needed
         if (this.imgDuration && this.imgDuration > 1) {
           this.imgDuration--
