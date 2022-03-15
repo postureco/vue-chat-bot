@@ -42,10 +42,6 @@ export default {
     autoScroll: {
       type: Boolean,
       default: true
-    },
-
-    imgTarget: {
-      type: [String, Boolean]
     }
   },
 
@@ -88,8 +84,6 @@ export default {
   methods: {
 
     updateUI () {
-      /* eslint-disable no-console */
-      console.log('updating ui')
       if (this.autoScroll) {
         this.updateScroll()
       }
@@ -103,9 +97,6 @@ export default {
           this.removeImage() // force empty image container if url is omitted
         }
       } else if (this.latestMessage.agent === 'bot') {
-        /* eslint-disable no-console */
-        console.log('latest', this.latestMessage)
-
         // update msg counter and remove images as needed
         if (this.imgDuration && this.imgDuration > 1) {
           this.imgDuration--
@@ -118,23 +109,14 @@ export default {
     },
 
     setImage (img) {
-      if (img && img.url && this.imgTarget) {
-        const targets = document.querySelectorAll(this.imgTarget)
-        if (targets && targets.length) {
-          targets[targets.length - 1].innerHTML = `<img class="qkb-msg-img-src" src="${img.url}" />`
-
-          this.imgDuration = img.msgDuration || 0 // 0 will remain until the next image removes it
-        }
+      if (img && img.url) {
+        this.$emit('img-change', img.url)
+        this.imgDuration = img.msgDuration || 0 // 0 will remain until the next image removes it
       }
     },
 
     removeImage () {
-      if (this.imgTarget) {
-        const targets = document.querySelectorAll(this.imgTarget)
-        if (targets && targets.length) {
-          targets[targets.length - 1].innerHTML = ''
-        }
-      }
+      this.$emit('img-change', null)
     },
 
     updateScroll () {
