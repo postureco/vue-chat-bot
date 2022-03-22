@@ -91,8 +91,8 @@ export default {
         this.botTyping = false
         this.messageData.push({
           agent: 'bot',
-          type: 'text',
-          text: 'Lorem ipsum dolor sit amet.',
+          type: 'html',
+          text: 'Lorem ipsum dolor sit amet.<i>italic?</i>',
           'image': {
             'url': 'https://i.imgur.com/hp7Fp1U.gif',
             'msgDuration': 0
