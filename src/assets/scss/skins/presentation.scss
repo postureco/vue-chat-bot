@@ -23,20 +23,16 @@ $success: #06d6a0;
 
 
 
-// Chat bot style overrides
-
-.qkb-bot-ui.presentation {  // closed at end of doc
-
-
-
-width: 100%;
-font-family: "Roboto", sans-serif;
+// Chat bot style overrides (incl non-presentation)
 
 .qkb-board {
   width: 100%;
-  align-items: center;
-} // end qkb-board
 
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  align-items: center;
+  box-shadow: none;
+  background: transparent;
 
 
 & .qkb-board-action {
@@ -46,6 +42,7 @@ font-family: "Roboto", sans-serif;
   opacity: 1.0;
   transition: opacity 0.3s;
   width: 600px;
+  max-width: 100%;
 
   &.qkb-board-action--disabled {
     opacity: 0.0;
@@ -61,21 +58,12 @@ font-family: "Roboto", sans-serif;
 }
 
 
-.qkb-board {
-  box-shadow: none;
-  background: transparent;
-}
-
 .qkb-board-content {
   overflow: hidden;
   background-color: transparent;
   scroll-behavior: smooth;
 
-  .qkb-board-content__bubbles {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-  }
+
 
   &::-webkit-scrollbar {
     display: none;
@@ -131,6 +119,8 @@ font-family: "Roboto", sans-serif;
   }
 }
 
+} // end qkb-board
+
 
 .qkb-mb-button-options__btn {
   color: $primary;
@@ -142,8 +132,18 @@ font-family: "Roboto", sans-serif;
   }
 }
 
-
+.qkb-bot-ui.presentation {  // closed at end of doc
 // Message layout and stuff
+
+
+.qkb-board-content {
+  .qkb-board-content__bubbles {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
 
 .qkb-msg-bubble {
   margin: 0;
