@@ -119,9 +119,6 @@ $success: #06d6a0;
   }
 }
 
-} // end qkb-board
-
-
 .qkb-mb-button-options__btn {
   color: $primary;
   border-color: $primary;
@@ -131,6 +128,11 @@ $success: #06d6a0;
     background-color: $primary;
   }
 }
+
+} // end qkb-board
+
+
+
 
 .qkb-bot-ui.presentation {  // closed at end of doc
 // Message layout and stuff
