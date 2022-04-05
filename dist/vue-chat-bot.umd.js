@@ -17911,12 +17911,12 @@ var Contentvue_type_template_id_f8a1a674_lang_pug_staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/components/Board/Content.vue?vue&type=template&id=f8a1a674&lang=pug&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ed8bb762-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/Main.vue?vue&type=template&id=577fc236&lang=pug&
-var Mainvue_type_template_id_577fc236_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"qkb-msg-bubble",class:_vm.bubbleClass},[(_vm.message.agent === 'bot')?_c('div',{staticClass:"qkb-msg-avatar"},[_c('div',{staticClass:"qkb-msg-avatar__img"})]):_vm._e(),_c('div',{ref:"qkb-msg-img__ext",staticClass:"qkb-msg-img qkb-msg-img__ext"}),(_vm.componentType)?_c(_vm.componentType,{tag:"component",attrs:{"main-data":_vm.message,"is-latest":_vm.isLatest,"is-bot":_vm.isBot}},[_vm._l((_vm.$slots),function(_,name){return _vm._t(name,null,{"slot":name})})],2):_vm._e(),(_vm.message.createdAt)?_c('div',{staticClass:"qkb-msg-bubble__time"},[_vm._v(_vm._s(_vm.message.createdAt))]):_vm._e()],1)}
-var Mainvue_type_template_id_577fc236_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ed8bb762-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/Main.vue?vue&type=template&id=b6751154&lang=pug&
+var Mainvue_type_template_id_b6751154_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"qkb-msg-bubble",class:_vm.bubbleClass},[(_vm.message.agent === 'bot')?_c('div',{staticClass:"qkb-msg-avatar"},[_c('div',{staticClass:"qkb-msg-avatar__img"})]):_vm._e(),_c('div',{ref:"qkb-msg-img__ext",staticClass:"qkb-msg-img qkb-msg-img__ext"}),(_vm.componentType)?_c(_vm.componentType,{tag:"component",attrs:{"main-data":_vm.message,"is-latest":_vm.isLatest,"is-bot":_vm.isBot}},[_vm._l((_vm.$slots),function(_,name){return _vm._t(name,null,{"slot":name})})],2):_vm._e(),(_vm.message.createdAt)?_c('div',{staticClass:"qkb-msg-bubble__time"},[_vm._v(_vm._s(_vm.message.createdAt))]):_vm._e()],1)}
+var Mainvue_type_template_id_b6751154_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/MessageBubble/Main.vue?vue&type=template&id=577fc236&lang=pug&
+// CONCATENATED MODULE: ./src/components/MessageBubble/Main.vue?vue&type=template&id=b6751154&lang=pug&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ed8bb762-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/SingleText.vue?vue&type=template&id=ba67df28&lang=pug&
 var SingleTextvue_type_template_id_ba67df28_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"qkb-msg-bubble-component qkb-msg-bubble-component--single-text"},[_c('div',{ref:"qkb-msg-img__int",staticClass:"qkb-msg-img qkb-msg-img__int"}),(_vm.mainData.type === 'text')?_c('div',{staticClass:"qkb-msg-bubble-component__text",class:{ 'has-msg-action' : _vm.hasMsgAction && _vm.isLatest && _vm.isBot}},[_vm._v(_vm._s(_vm.mainData.text)),(_vm.isLatest && _vm.isBot)?_vm._t("activeMsgAction"):_vm._e()],2):_vm._e(),(['html', 'button'].includes(_vm.mainData.type))?_c('div',{staticClass:"qkb-msg-bubble-component__text",class:{ 'has-msg-action' : _vm.hasMsgAction && _vm.isLatest && _vm.isBot}},[_c('div',{staticClass:"qkb-msg-bubble-component__html",domProps:{"innerHTML":_vm._s(_vm.mainData.text)}}),(_vm.isLatest && _vm.isBot)?_vm._t("activeMsgAction"):_vm._e()],2):_vm._e()])}
@@ -18105,7 +18105,7 @@ var ButtonOptions_component = normalizeComponent(
     },
     bubbleClass: function bubbleClass() {
       var agent = this.message.agent === 'bot' ? 'qkb-msg-bubble--bot' : 'qkb-msg-bubble--user';
-      return agent + (this.isLatest ? ' qkb-active-msg' : '') + (this.isLastOfAgent ? ' qkb-last-of-agent qkb-last--' + this.message.agent : '');
+      return agent + (this.message.temp ? ' qkb-temporary' : '') + (this.isLatest ? ' qkb-active-msg' : '') + (this.isLastOfAgent ? ' qkb-last-of-agent qkb-last--' + this.message.agent : '');
     },
     // Define the message type and return the specific component
     componentType: function componentType() {
@@ -18136,8 +18136,8 @@ var ButtonOptions_component = normalizeComponent(
 
 var Main_component = normalizeComponent(
   MessageBubble_Mainvue_type_script_lang_js_,
-  Mainvue_type_template_id_577fc236_lang_pug_render,
-  Mainvue_type_template_id_577fc236_lang_pug_staticRenderFns,
+  Mainvue_type_template_id_b6751154_lang_pug_render,
+  Mainvue_type_template_id_b6751154_lang_pug_staticRenderFns,
   false,
   null,
   null,

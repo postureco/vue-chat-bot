@@ -50,7 +50,7 @@ export default {
       const agent = (this.message.agent === 'bot'
         ? 'qkb-msg-bubble--bot'
         : 'qkb-msg-bubble--user')
-      return agent + (this.isLatest ? ' qkb-active-msg' : '') + (this.isLastOfAgent ? ' qkb-last-of-agent qkb-last--' + this.message.agent : '')
+      return agent + (this.message.temp ? ' qkb-temporary' : '') + (this.isLatest ? ' qkb-active-msg' : '') + (this.isLastOfAgent ? ' qkb-last-of-agent qkb-last--' + this.message.agent : '')
     },
 
     // Define the message type and return the specific component
