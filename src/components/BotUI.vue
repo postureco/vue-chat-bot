@@ -220,8 +220,8 @@ export default {
       this.$emit('msg-send', value)
     },
 
-    selectOption (value) {
-      this.$emit('msg-send', value)
+    selectOption (value, multi = false) {
+      this.$emit('msg-send', value, multi)
     }
   }
 }

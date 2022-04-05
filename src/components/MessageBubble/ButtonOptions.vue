@@ -43,7 +43,7 @@ export default {
   methods: {
     selectOption (item) {
       this.selectedItem = item.value
-      EventBus.$emit('select-button-option', item)
+      EventBus.$emit('select-button-option', item, (this.mainData.options.length > 1))
     }
   }
 }
